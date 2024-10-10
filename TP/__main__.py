@@ -1,28 +1,34 @@
 from TP.loading import load_directory
-from TP.kmers import stream_kmers, kmer2str
+from TP.kmers import enumerate_kmers, kmer2str
 
 
 
 def jaccard(fileA, fileB, k):
-    j = 0
-    # --- To complete ---
-    return j
+    kmersA = set(enumerate_kmers(fileA, k))
+    kmersB = set(enumerate_kmers(fileB, k))
+
+    intersection = len(kmersA & kmersB)
+    union = len(kmersA | kmersB)
+
+    return intersection / union if union > 0 else 0
 
 
 
 if __name__ == "__main__":
-    print("Computation of Jaccard similarity between files")
-
-    # Load all the files in a dictionary
-    files = load_directory("data")
-    k = 21
+    print("Calcul de la similarité de Jaccard entre les fichiers")
     
-    print("Computing Jaccard similarity for all pairs of samples")
-    filenames = list(files.keys())
-    for i in range(len(files)):
-        for j in range(i+1, len(files)):
-            
-            # --- Complete here ---
+    with open("resultats_jaccard.txt", "w") as f_out:
 
-            j = jaccard(files[filenames[i]], files[filenames[j]], k)
-            print(filenames[i], filenames[j], j)
+        files = load_directory("data")
+        k = 21
+        
+        print("Calcul de la similarité de Jaccard")
+        filenames = list(files.keys())
+        for i in range(len(files)):
+            for j in range(i + 1, len(files)):
+                # on calcule la similarité de Jaccard pour chaque paire de fichiers
+                similarity = jaccard(files[filenames[i]][0], files[filenames[j]][0], k)
+                result = f"{filenames[i]} vs {filenames[j]} : Similarité de Jaccard = {similarity:.4f}"
+                print(result)
+                f_out.write(result + "\n") 
+

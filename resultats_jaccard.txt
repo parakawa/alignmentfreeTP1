@@ -1,0 +1,10 @@
+GCA_000013265.1 vs GCA_000008865.2 : Similarité de Jaccard = 0.3105
+GCA_000013265.1 vs GCA_030271835.1 : Similarité de Jaccard = 0.0008
+GCA_000013265.1 vs GCA_000005845.2 : Similarité de Jaccard = 0.3410
+GCA_000013265.1 vs GCA_000069965.1 : Similarité de Jaccard = 0.0008
+GCA_000008865.2 vs GCA_030271835.1 : Similarité de Jaccard = 0.0008
+GCA_000008865.2 vs GCA_000005845.2 : Similarité de Jaccard = 0.4520
+GCA_000008865.2 vs GCA_000069965.1 : Similarité de Jaccard = 0.0008
+GCA_030271835.1 vs GCA_000005845.2 : Similarité de Jaccard = 0.0009
+GCA_030271835.1 vs GCA_000069965.1 : Similarité de Jaccard = 0.0264
+GCA_000005845.2 vs GCA_000069965.1 : Similarité de Jaccard = 0.0009
